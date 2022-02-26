@@ -36,9 +36,7 @@ fun CryptoListScreen(
         color = MaterialTheme.colors.secondary,
         modifier = Modifier.fillMaxSize()
     ) {
-        
         Column {
-
             Text("Crypto Crazy", modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp),
@@ -47,7 +45,6 @@ fun CryptoListScreen(
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colors.primary
             )
-
             Spacer(modifier = Modifier.height(10.dp))
             // Search
             SearchBar(
@@ -58,7 +55,6 @@ fun CryptoListScreen(
             ) {
                 viewModel.searchCryptoList(it)
             }
-
             Spacer(modifier = Modifier.height(10.dp))
             // List
             CryptoList(navController = navController)
@@ -72,7 +68,6 @@ fun SearchBar(
     hint: String = "",
     onSearch: (String) -> Unit = {}
 ) {
-
     var text by remember {
         mutableStateOf("")
     }
@@ -97,7 +92,6 @@ fun SearchBar(
                     isHintDisplayed = it.isFocused != true && text.isEmpty()
                 }
         )
-
         if (isHintDisplayed) {
             Text(text = hint,
                 color = Color.LightGray,
@@ -167,7 +161,6 @@ fun CryptoRow(
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colors.primary
         )
-
         Text(text = crypto.price,
             style = MaterialTheme.typography.h5,
             modifier = Modifier.padding(2.dp),

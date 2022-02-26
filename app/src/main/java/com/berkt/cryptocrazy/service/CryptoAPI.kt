@@ -12,7 +12,7 @@ interface CryptoAPI {
         @Query("key") key: String
     ): CryptoList
 
-    @GET
+    @GET("currencies")
     suspend fun getCrypto(
         @Query("key") key: String,
         @Query("ids") id: String,

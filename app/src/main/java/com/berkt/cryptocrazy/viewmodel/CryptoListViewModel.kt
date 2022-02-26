@@ -15,7 +15,6 @@ import javax.inject.Inject
 class CryptoListViewModel @Inject constructor(
     private val repository: CryptoRepository
 ): ViewModel() {
-
     var cryptoList = mutableStateOf<List<CryptoListItem>>(listOf())
     var errorMessage = mutableStateOf("")
     var isLoading = mutableStateOf(false)
